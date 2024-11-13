@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Gridless voxels</title>
+	<link rel="license" href=#license>
+	<!-- Icon shamelessly stolen from three.js.org -->
+	<link rel="shortcut icon" href="./icon.svg"
+		type="image/svg+xml">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<!--<STYLE>/* https://stackoverflow.com/a/53364612 */
+	HTML { visibility: hidden; opacity: 0;
+	transition: visibility 1s, opacity 1s }</STYLE>-->
+</head>
+
+<body>
+	<header><noscript>This is a JavaScript app, but if you are
+			reading this <strong class=error>JavaScript is
+				disabled! (or
+				otherwise unavailable)</strong></noscript>
+		<!--<div id=nocss><!--Wrapped to avoid clumping, should
+		both errors displays.--\><em>Note: This site was made
+		with Cascasding Style Sheets in mind. If you can read
+		this, this site may not render as expected!</em></div>-->
+	</header>
+	<main id=main><progress id=progress>Loading
+			Soon&trade;</progress><canvas id=canvas><strong
+				class=error>The Canvas API is required to render
+				this scene.</strong></canvas>
+		<details>
+			<summary>Console</summary><output
+				id=log>Hi!<br></output>
+		</details>
+	</main>
+	<footer><style id=y></style><script id=p>
+	   
+	</script>
+	
+		<details id=credits>
+			<summary>Credits:</summary>
+			<dl>
+				<dt>Bridge2 cubemap <small><a
+							href=textures/cube/Bridge2/readme.md>readme.md</a></small>
+				<dd>by <CITE><I>Emil Persson</I>, <ABBR
+							TITLE="Also Know As">aka</ABBR>
+						<a
+							href=https://www.humus.name><I>Humus</I></a></CITE>. <small></small>
+					<hr>Licensed under a <I>Creative Commons
+						Attribution 3.0 Unported
+						License</I><small><a class=raw
+							href=https://creativecommons.org/licenses/by/3.0>https://creativecommons.org/licenses/by/3.0</a></small>
+				</dd>
+			</dl>
+		</details>
+	</footer>
+	<!-- Including the three.js library -><script async src="https://unpkg.com/es-module-shims"></script><!--<script type=importmap>{"imports":{"lil-gui":"https://unpkg.com/lil-gui/dist/lil-gui.esm.js","three":"https://unpkg.com/three/build/three.module.js"}}</script>-->
+	<script src="scripts/main.js" type=module></script>
+</body>
+<!--<link rel=stylesheet href="show.css" />-->
+
+</html>

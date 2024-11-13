@@ -1,0 +1,175 @@
+/* Only displays when CSS is disabled. */
+#nocss { display: none; }
+
+* {
+	--transition-time: 1s;
+	transition: all var(--transition-time);
+}
+
+.lil-gui {
+	--width:
+		min(calc(100vw - (2 * 15px)), calc(50% - 15px), 245px);
+}
+.lil-gui .lil-gui .lil-gui > .children {
+  border: none;
+  margin-left: var(--folder-indent, 10px);
+  border-left: 2px solid var(--widget-color, red);
+}
+
+html, body {
+	/*overflow: hidden;
+	user-select: none;*/
+  margin: 0;
+	transition: all var(--transition-time), margin 0s;
+  /*padding: 0;*/
+	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.error {
+	border: double;
+	display: inline-block;
+}
+
+main {
+	flex-grow: 1;
+	transition: all 60s, flex-grow 1s;
+	display: flex;
+	flex-direction: inherit;
+	/* required for absolutely positioned child */
+	position: relative;
+}
+
+progress {
+	max-height: 1em;
+}
+progress[hidden] {
+	display: block;
+	visibility: collapse;
+	max-height: 0;
+	/*transition: max-height 1s, visibility 0s 1s;*/
+}
+
+.lil-gui.root:not(.autoplace) {
+	max-height: 100%;
+	position: absolute;
+	top: 0;
+	right: 15px;
+	z-index: 1001;
+}
+
+canvas {
+	flex: 1 1 0;
+	transition: all 60s, flex-grow 1s;
+	min-height: 0;
+	/*width: 100%; 
+	height: 100%;
+	padding: 0;*/
+	image-rendering: pixelated;
+}
+
+output{color:white;background-color:black; white-space:pre}
+
+a.raw {
+	white-space: pre-line;
+}
+
+#credits {
+	color: var(--foreground);
+	background: var(--backgound);
+	font-family: sans-serif;
+	overflow: auto;
+}
+/*#credits[open] { box-shadow: 0 0 1em var(--midground); }
+/* If it was in the base block, the shadows would add up! *
+#credits:not([open]) { box-shadow: 0 0 1em var(--backgound); }*/
+
+#credits summary { background: var(--backgound); }
+#credits[open] summary { background: var(--midground); }
+
+/**BLACK RIGHT-POINTING SMALL TRIANGLE,
+ * COPYRIGHT SIGN,
+ * NO-BREAK SPACE */
+#credits summary::marker { content: "\25B8\A9\A0";}
+/**BLACK DOWN-POINTING SMALL TRIANGLE,
+ * COPYRIGHT SIGN,
+ * NO-BREAK SPACE */
+#credits[open] summary::marker { content: "\25BE\A9\A0"; }
+
+#credits dt, #credits dd { border-color: var(--midground); }
+#credits dt {
+	width: fit-content;
+	border-style: none outset outset none;
+}
+A::after { content: "(" attr(HREF) ")";	font-size: smaller;
+		  font-family: monospace; line-decoration: none }
+#credits dd {
+	border-style: outset none none outset;
+	width: fit-content;
+}
+
+#credits hr {
+	/*border: var(--midground) inset;*/
+	border-style: inset;
+	border-color: var(--midground);
+	margin: .5em 1ch;
+}
+	a { color: seagreen; }
+	a:visited { color: palevioletred; }
+	a:active { color: darkorange; }	
+
+/*@media (prefers-color-scheme: dark) {*/
+	
+	body {
+		color: white;
+		background-color: dimgray;
+	}
+
+	noscript { color: yellow; }
+	.error {
+		border-color: red;
+		text-shadow: 0 0 1em red;
+	}
+	
+	/*canvas { background: red }*/
+	
+	footer {
+		background: darkslategray;
+		box-shadow: 0 0 1em darkslategray;
+	}
+	
+	#credits {
+		--backgound: navy;
+		--midground: blue;
+		--foreground: cyan;
+	}
+/*}*/
+
+@media (prefers-color-scheme: light) {
+noscript { background: yellow; }	
+	.error { color: red; }
+	
+	/*canvas { background: lightslategray }*/
+	
+	footer {
+		background: slategray;
+		box-shadow: 0 0 1em slategray;
+	}
+	
+	#credits {
+		--backgound: lightcyan;
+		--midground: lightblue;
+		--foreground: blue;
+	}
+}
+
+/**/@media (pointer: coarse) {
+	canvas,
+	summary {
+		min-width: 48px;
+		min-height: 48px;
+	}
+}/**/
